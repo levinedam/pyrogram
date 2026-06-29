@@ -17,69 +17,20 @@
 #  along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
 from typing import Optional, Union
+import logging
 
 import pyrogram
 from pyrogram import enums, raw, types
 
 from ..object import Object
 
+log = logging.getLogger("pyrogram.button_style_debug")
+
 
 class InlineKeyboardButton(Object):
     """One button of an inline keyboard.
 
     You must use exactly one of the optional fields.
-
-    Parameters:
-        text (``str``):
-            Label text on the button.
-
-        callback_data (``str`` | ``bytes``, *optional*):
-            Data to be sent in a callback query to the bot when button is pressed, 1-64 bytes.
-
-        url (``str``, *optional*):
-            HTTP url to be opened when button is pressed.
-
-        web_app (:obj:`~pyrogram.types.WebAppInfo`, *optional*):
-            Description of the `Web App <https://core.telegram.org/bots/webapps>`_ that will be launched when the user
-            presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the
-            method :meth:`~pyrogram.Client.answer_web_app_query`. Available only in private chats between a user and the
-            bot.
-
-        login_url (:obj:`~pyrogram.types.LoginUrl`, *optional*):
-             An HTTP URL used to automatically authorize the user. Can be used as a replacement for
-             the `Telegram Login Widget <https://core.telegram.org/widgets/login>`_.
-
-        user_id (``int``, *optional*):
-            User id, for links to the user profile.
-
-        switch_inline_query (``str``, *optional*):
-            If set, pressing the button will prompt the user to select one of their chats, open that chat and insert
-            the bot's username and the specified inline query in the input field. Can be empty, in which case just
-            the bot's username will be inserted.
-
-        switch_inline_query_current_chat (``str``, *optional*):
-            If set, pressing the button will insert the bot's username and the specified inline query in the current
-            chat's input field. Can be empty, in which case only the bot's username will be inserted.
-
-        callback_game (:obj:`~pyrogram.types.CallbackGame`, *optional*):
-            Description of the game that will be launched when the user presses the button.
-            **NOTE**: This type of button **must** always be the first button in the first row.
-
-        requires_password (``bool``, *optional*):
-            A button that asks for 2-step verification password before sending callback query.
-
-        pay (``bool``, *optional*):
-            Pass True, to send a Pay button.
-
-        copy_text (``str``, *optional*):
-            A button that copies specified text to clipboard.
-            Limited to 256 character.
-
-        icon_custom_emoji_id (``str``, *optional*):
-            Identifier of the custom emoji that must be shown on the button.
-
-        style (:obj:`~pyrogram.enums.ButtonStyle`, *optional*):
-            Style of the button.
     """
 
     def __init__(
@@ -120,25 +71,40 @@ class InlineKeyboardButton(Object):
     def _build_raw_button_style(style, icon_custom_emoji_id):
         kbs = getattr(raw.types, "KeyboardButtonStyle", None)
         if kbs is None:
+            log.warning("[IKB._build_raw_button_style] KeyboardButtonStyle not found in raw.types")
             return None
 
         if style == enums.ButtonStyle.DEFAULT and icon_custom_emoji_id is None:
             return None
 
-        return kbs(
-            bg_primary=style == enums.ButtonStyle.PRIMARY,
-            bg_danger=style == enums.ButtonStyle.DANGER,
-            bg_success=style == enums.ButtonStyle.SUCCESS,
-            icon=int(icon_custom_emoji_id) if icon_custom_emoji_id is not None else None
-        )
+        try:
+            obj = kbs(
+                bg_primary=style == enums.ButtonStyle.PRIMARY,
+                bg_danger=style == enums.ButtonStyle.DANGER,
+                bg_success=style == enums.ButtonStyle.SUCCESS,
+                icon=int(icon_custom_emoji_id) if icon_custom_emoji_id is not None else None
+            )
+            return obj
+        except Exception as e:
+            log.warning("[IKB._build_raw_button_style] failed to build style: %r", e)
+            return None
 
     @staticmethod
     def _construct_raw(cls, **kwargs):
         try:
-            return cls(**kwargs)
-        except TypeError:
+            obj = cls(**kwargs)
+            log.warning("[IKB._construct_raw] OK cls=%s has_style=%s", cls.__name__, "style" in kwargs)
+            return obj
+        except TypeError as e:
+            had_style = "style" in kwargs
+            log.warning(
+                "[IKB._construct_raw] TypeError cls=%s had_style=%s err=%s -> retry without style",
+                cls.__name__, had_style, e
+            )
             kwargs.pop("style", None)
-            return cls(**kwargs)
+            obj = cls(**kwargs)
+            log.warning("[IKB._construct_raw] RETRY OK cls=%s", cls.__name__)
+            return obj
 
     @staticmethod
     def read(b: "raw.base.KeyboardButton"):
@@ -254,6 +220,11 @@ class InlineKeyboardButton(Object):
     async def write(self, client: "pyrogram.Client"):
         style = self._build_raw_button_style(self.style, self.icon_custom_emoji_id)
 
+        log.warning(
+            "[IKB.write] text=%r style=%r icon=%r raw_style=%r",
+            self.text, self.style, self.icon_custom_emoji_id, style
+        )
+
         if self.callback_data is not None:
             data = bytes(self.callback_data, "utf-8") if isinstance(self.callback_data, str) else self.callback_data
             return self._construct_raw(
@@ -280,6 +251,7 @@ class InlineKeyboardButton(Object):
                     style=style
                 )
             except TypeError:
+                log.warning("[IKB.write] login_url.write does not support style, retry without style")
                 return self.login_url.write(
                     text=self.text,
                     bot=await client.resolve_peer(self.login_url.bot_username or "self")
