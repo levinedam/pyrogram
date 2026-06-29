@@ -59,6 +59,7 @@ pyrogram/crypto/prime.py
 pyrogram/crypto/rsa.py
 pyrogram/enums/__init__.py
 pyrogram/enums/auto_name.py
+pyrogram/enums/button_style.py
 pyrogram/enums/chat_action.py
 pyrogram/enums/chat_event_action.py
 pyrogram/enums/chat_member_status.py
