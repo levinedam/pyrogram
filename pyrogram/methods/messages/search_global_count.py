@@ -32,7 +32,7 @@ class SearchGlobalCount:
     ) -> int:
         """Get the count of messages resulting from a global search.
 
-        If you want to get the actual messages, see :meth:`~pyrogram_styled.Client.search_global`.
+        If you want to get the actual messages, see :meth:`~pyrogram.Client.search_global`.
 
         .. include:: /_includes/usable-by/users.rst
 
