@@ -51,7 +51,7 @@ class InlineKeyboardButton(Object):
         web_app (:obj:`~pyrogram.types.WebAppInfo`, *optional*):
             Description of the `Web App <https://core.telegram.org/bots/webapps>`_ that will be launched when the user
             presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the
-            method :meth:`~pyrogram_styled.Client.answer_web_app_query`. Available only in private chats between a user and the
+            method :meth:`~pyrogram.Client.answer_web_app_query`. Available only in private chats between a user and the
             bot.
 
         login_url (:obj:`~pyrogram.types.LoginUrl`, *optional*):
@@ -72,7 +72,7 @@ class InlineKeyboardButton(Object):
             quick way for the user to open your bot in inline mode in the same chat - good for selecting something
             from multiple options.
 
-        switch_inline_query_chosen_chat (:obj:`~pyrogram_styled.types.SwitchInlineQueryChosenChat`, *optional*):
+        switch_inline_query_chosen_chat (:obj:`~pyrogram.types.SwitchInlineQueryChosenChat`, *optional*):
             If set, pressing the button will prompt the user to select one of their chats of the specified type, open that chat and insert the bot's username and the specified inline query in the input field
 
         copy_text (:obj:`~pyrogram.types.CopyTextButton`, *optional*):
