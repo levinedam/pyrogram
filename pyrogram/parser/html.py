@@ -114,7 +114,7 @@ class Parser(HTMLParser):
 
 
 class HTML:
-    def __init__(self, client: Optional["pyrogram_styled.Client"]):
+    def __init__(self, client: Optional["pyrogram.Client"]):
         self.client = client
 
     async def parse(self, text: str):
