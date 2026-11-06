@@ -256,7 +256,7 @@ class Session:
                             "The msg_id belongs to over 30 seconds in the future. "
                             "This usually means your system clock is ahead of the actual time. "
                             "Please synchronize your system time with an NTP server to avoid "
-                            "this error in pyrogram_styled."
+                            "this error in pyrogram."
                         )
 
                     if time_diff < -300:
@@ -264,7 +264,7 @@ class Session:
                             "The msg_id belongs to over 300 seconds in the past. "
                             "This usually means your system clock is behind the actual time. "
                             "Please synchronize your system time with an NTP server to avoid "
-                            "this error in pyrogram_styled."
+                            "this error in pyrogram."
                         )
             except SecurityCheckMismatch as e:
                 log.info("Discarding packet: %s", e)
