@@ -1,6 +1,6 @@
 <p align="center">
-    <a href="https://github.com/pyrogram_styled/pyrogram_styled">
-        <img src="https://docs.pyrogram_styled.org/_static/pyrogram_styled.png" alt="Pyrogram" width="128">
+    <a href="https://github.com/pyrogram/pyrogram">
+        <img src="https://docs.pyrogram.org/_static/pyrogram_styled.png" alt="Pyrogram" width="128">
     </a>
     <br>
     <b>Telegram MTProto API Framework for Python</b>
