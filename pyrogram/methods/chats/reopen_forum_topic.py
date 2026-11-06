@@ -16,14 +16,14 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with Pyrofork.  If not, see <http://www.gnu.org/licenses/>.
 
-import pyrogram_styled
-from pyrogram_styled import raw
+import pyrogram
+from pyrogram import raw
 from typing import Union
 
 
 class ReopenForumTopic:
     async def reopen_forum_topic(
-        self: "pyrogram_styled.Client",
+        self: "pyrogram.Client",
         chat_id: Union[int, str],
         topic_id: int
     ) -> bool:
