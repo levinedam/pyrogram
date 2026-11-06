@@ -131,7 +131,7 @@ def create(func: Callable, name: str = None, **kwargs) -> Filter:
             A function that accepts three positional arguments *(filter, client, update)* and returns a boolean: True if the
             update should be handled, False otherwise.
             The *filter* argument refers to the filter itself and can be used to access keyword arguments (read below).
-            The *client* argument refers to the :obj:`~pyrogram_styled.Client` that received the update.
+            The *client* argument refers to the :obj:`~pyrogram.Client` that received the update.
             The *update* argument type will vary depending on which `Handler <handlers>`_ is coming from.
             For example, in a :obj:`~pyrogram.handlers.MessageHandler` the *update* argument will be a :obj:`~pyrogram.types.Message`; in a :obj:`~pyrogram.handlers.CallbackQueryHandler` the *update* will be a :obj:`~pyrogram.types.CallbackQuery`.
             Your function body can then access the incoming update attributes and decide whether to allow it or not.
@@ -811,7 +811,7 @@ def command(commands: Union[str, List[str]], prefixes: Union[str, List[str]] = "
     """
     command_re = re.compile(r"([\"'])(.*?)(?<!\\)\1|(\S+)")
 
-    async def func(flt, client: pyrogram_styled.Client, message: Message):
+    async def func(flt, client: pyrogram.Client, message: Message):
         username = client.me.username or ""
         text = message.text or message.caption
         message.command = None
