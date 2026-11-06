@@ -49,7 +49,7 @@ class Object:
         if isinstance(obj, bytes):
             return repr(obj)
 
-        # https://t.me/pyrogram_styledchat/167281
+        # https://t.me/pyrogram_chat/167281
         # Instead of re.Match, which breaks for python <=3.6
         if isinstance(obj, typing.Match):
             return repr(obj)
