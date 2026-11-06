@@ -135,7 +135,7 @@ class ChatEvent(Object):
             New forum topic.
             For :obj:`~pyrogram.enums.ChatEvenAction.CREATED_FORUM_TOPIC` action only.
 
-        old_forum_topic, new_forum_topic (:obj:`~pyrogram_styled.types.ForumTopic`, *optional*):
+        old_forum_topic, new_forum_topic (:obj:`~pyrogram.types.ForumTopic`, *optional*):
             Edited forum topic.
             For :obj:`~pyrogram.enums.ChatEvenAction.EDITED_FORUM_TOPIC` action only.
 
