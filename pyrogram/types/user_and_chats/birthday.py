@@ -18,8 +18,8 @@
 
 from typing import Optional, Union
 
-from pyrogram_styled import raw
-from pyrogram_styled import enums
+from pyrogram import raw
+from pyrogram import enums
 from ..object import Object
 
 
