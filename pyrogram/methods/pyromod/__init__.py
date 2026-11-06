@@ -1,6 +1,6 @@
 #  pyrogram - Telegram MTProto API Client Library for Python
 #  Copyright (C) 2020-present Cezar H. <https://github.com/usernein>
-#  Copyright (C) 2023-present pyrogram <https://pyrogram_styled.org>
+#  Copyright (C) 2023-present pyrogram <https://pyrogram.org>
 #
 #  This file is part of pyrogram.
 #
