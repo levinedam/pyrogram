@@ -52,4 +52,4 @@ class GetCustomEmojiStickers:
             sticker = await types.Sticker._parse(self, item, attributes)
             stickers.append(sticker)
 
-        return pyrogram_styled.types.List(stickers)
+        return pyrogram.types.List(stickers)
