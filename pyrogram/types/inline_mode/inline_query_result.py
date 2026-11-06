@@ -59,5 +59,5 @@ class InlineQueryResult(Object):
         self.input_message_content = input_message_content
         self.reply_markup = reply_markup
 
-    async def write(self, client: "pyrogram_styled.Client"):
+    async def write(self, client: "pyrogram.Client"):
         pass
