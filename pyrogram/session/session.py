@@ -216,7 +216,7 @@ class Session:
 
     async def handle_packet(self, packet):
         data = await self.client.loop.run_in_executor(
-            pyrogram_styled.crypto_executor,
+            pyrogram.crypto_executor,
             mtproto.unpack,
             BytesIO(packet),
             self.session_id,
@@ -363,7 +363,7 @@ class Session:
         log.debug("Sent: %s", message)
 
         payload = await self.client.loop.run_in_executor(
-            pyrogram_styled.crypto_executor,
+            pyrogram.crypto_executor,
             mtproto.pack,
             message,
             self.salt,
