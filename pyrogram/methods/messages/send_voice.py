@@ -148,7 +148,7 @@ class SendVoice:
 
         Returns:
             :obj:`~pyrogram.types.Message` | ``None``: On success, the sent voice message is returned, otherwise, in
-            case the upload is deliberately stopped with :meth:`~pyrogram_styled.Client.stop_transmission`, None is returned.
+            case the upload is deliberately stopped with :meth:`~pyrogram.Client.stop_transmission`, None is returned.
 
         Example:
             .. code-block:: python
