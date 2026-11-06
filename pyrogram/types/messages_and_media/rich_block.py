@@ -891,7 +891,7 @@ class RichBlockAudio(RichBlock):
         audio (:obj:`~pyrogram.types.Audio`):
             The audio.
 
-        caption (:obj:`~pyrogram_.types.RichBlockCaption`, *optional*):
+        caption (:obj:`~pyrogram.types.RichBlockCaption`, *optional*):
             Caption of the block.
     """
 
