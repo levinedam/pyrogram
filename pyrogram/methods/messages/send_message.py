@@ -125,7 +125,7 @@ class SendMessage:
 
                 # For bots only, send messages with keyboards attached
 
-                from pyrogram_styled.types import (
+                from pyrogram.types import (
                     ReplyKeyboardMarkup, InlineKeyboardMarkup, InlineKeyboardButton)
 
                 # Send a normal keyboard
