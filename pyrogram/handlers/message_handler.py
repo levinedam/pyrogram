@@ -60,7 +60,7 @@ class MessageHandler(Handler):
 
     @staticmethod
     async def check_if_has_matching_listener(
-        client: pyrogram_styled.Client, message: Message
+        client: pyrogram.Client, message: Message
     ) -> tuple[bool, Listener | None]:
         """
         Checks if the message has a matching listener.
