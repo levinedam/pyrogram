@@ -18,13 +18,13 @@
 
 from typing import Union
 
-import pyrogram_styled
-from pyrogram_styled import raw
+import pyrogram
+from pyrogram import raw
 
 
 class GetChatMembersCount:
     async def get_chat_members_count(
-        self: "pyrogram_styled.Client",
+        self: "pyrogram.Client",
         chat_id: Union[int, str]
     ) -> int:
         """Get the number of members in a chat.
