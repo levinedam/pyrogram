@@ -2819,7 +2819,7 @@ class Message(Object, Update):
                 Defaults to True.
 
             type (:obj`~pyrogram.enums.PollType`, *optional*):
-                Poll type, :obj:`~pyrogram_.enums.PollType.QUIZ` or :obj:`~pyrogram.enums.PollType.REGULAR`.
+                Poll type, :obj:`~pyrogram.enums.PollType.QUIZ` or :obj:`~pyrogram.enums.PollType.REGULAR`.
                 Defaults to :obj:`~pyrogram.enums.PollType.REGULAR`.
 
             allows_multiple_answers (``bool``, *optional*):
