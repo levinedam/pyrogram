@@ -210,7 +210,7 @@ class Message(Object, Update):
         voice (:obj:`~pyrogram.types.Voice`, *optional*):
             Message is a voice message, information about the file.
 
-        video_note (:obj:`~pyrogram_styled.types.VideoNote`, *optional*):
+        video_note (:obj:`~pyrogram.types.VideoNote`, *optional*):
             Message is a video note, information about the video message.
 
         caption (``str``, *optional*):
