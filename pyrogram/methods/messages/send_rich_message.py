@@ -112,7 +112,7 @@ class SendRichMessage:
                     reply_markup=types.InlineKeyboardMarkup(
                         [
                             [types.InlineKeyboardButton("Data", callback_data="callback_data")],
-                            [types.InlineKeyboardButton("Docs", url="https://docs.pyrogram_styled.org")],
+                            [types.InlineKeyboardButton("Docs", url="https://docs.pyrogram.org")],
                         ]
                     ),
                 )
