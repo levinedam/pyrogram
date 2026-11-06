@@ -16,8 +16,8 @@
 #  You should have received a copy of the GNU Lesser General Public License
 #  along with Pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
-import pyrogram_styled
-from pyrogram_styled import raw
+import pyrogram
+from pyrogram import raw
 from ..object import Object
 
 
@@ -26,13 +26,13 @@ class BotCommandScope(Object):
 
     Currently, the following 7 scopes are supported:
 
-    - :obj:`~pyrogram_styled.types.BotCommandScopeDefault`
-    - :obj:`~pyrogram_styled.types.BotCommandScopeAllPrivateChats`
-    - :obj:`~pyrogram_styled.types.BotCommandScopeAllGroupChats`
-    - :obj:`~pyrogram_styled.types.BotCommandScopeAllChatAdministrators`
-    - :obj:`~pyrogram_styled.types.BotCommandScopeChat`
-    - :obj:`~pyrogram_styled.types.BotCommandScopeChatAdministrators`
-    - :obj:`~pyrogram_styled.types.BotCommandScopeChatMember`
+    - :obj:`~pyrogram.types.BotCommandScopeDefault`
+    - :obj:`~pyrogram.types.BotCommandScopeAllPrivateChats`
+    - :obj:`~pyrogram.types.BotCommandScopeAllGroupChats`
+    - :obj:`~pyrogram.types.BotCommandScopeAllChatAdministrators`
+    - :obj:`~pyrogram.types.BotCommandScopeChat`
+    - :obj:`~pyrogram.types.BotCommandScopeChatAdministrators`
+    - :obj:`~pyrogram.types.BotCommandScopeChatMember`
 
     **Determining list of commands**
 
@@ -69,5 +69,5 @@ class BotCommandScope(Object):
 
         self.type = type
 
-    async def write(self, client: "pyrogram_styled.Client") -> "raw.base.BotCommandScope":
+    async def write(self, client: "pyrogram.Client") -> "raw.base.BotCommandScope":
         raise NotImplementedError
