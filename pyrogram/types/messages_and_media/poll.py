@@ -86,7 +86,7 @@ class Poll(Object, Update):
             Description of the poll; for polls inside the Message object only.
 
         can_add_option (``bool``, *property*):
-            True, if an option can be added to the poll using :meth:`~pyrogram_styled.Client.add_poll_option`.
+            True, if an option can be added to the poll using :meth:`~pyrogram.Client.add_poll_option`.
 
     """
 
