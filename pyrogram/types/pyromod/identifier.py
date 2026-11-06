@@ -1,10 +1,10 @@
-#  pyrogram_styled - Telegram MTProto API Client Library for Python
+#  pyrogram - Telegram MTProto API Client Library for Python
 #  Copyright (C) 2020-present Cezar H. <https://github.com/usernein>
-#  Copyright (C) 2023-present pyrogram_styled <https://pyrogram_styled.org>
+#  Copyright (C) 2023-present pyrogram <https://pyrogram.org>
 #
-#  This file is part of pyrogram_styled.
+#  This file is part of pyrogram.
 #
-#  pyrogram_styled is free software: you can redistribute it and/or modify
+#  pyrogram is free software: you can redistribute it and/or modify
 #  it under the terms of the GNU Lesser General Public License as published
 #  by the Free Software Foundation, either version 3 of the License, or
 #  (at your option) any later version.
@@ -15,7 +15,7 @@
 #  GNU Lesser General Public License for more details.
 #
 #  You should have received a copy of the GNU Lesser General Public License
-#  along with pyrogram_styled.  If not, see <http://www.gnu.org/licenses/>.
+#  along with pyrogram.  If not, see <http://www.gnu.org/licenses/>.
 
 from __future__ import annotations
 
