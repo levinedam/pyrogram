@@ -1125,7 +1125,7 @@ class Chat(Object):
             query (``str``, *optional*):
                 Query string to filter members based on their display names and usernames.
                 Only applicable to supergroups and channels. Defaults to "" (empty string).
-                A query string is applicable only for :obj:`~pyrogram_styled.enums.ChatMembersFilter.SEARCH`,
+                A query string is applicable only for :obj:`~pyrogram.enums.ChatMembersFilter.SEARCH`,
                 :obj:`~pyrogram.enums.ChatMembersFilter.BANNED` and :obj:`~pyrogram.enums.ChatMembersFilter.RESTRICTED`
                 filters only.
 
