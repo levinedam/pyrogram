@@ -21,7 +21,7 @@ from pyrogram import raw
 from pyrogram import types
 
 
-class SetBotDefaultPrivileges:l
+class SetBotDefaultPrivileges:
     async def set_bot_default_privileges(
         self: "pyrogram.Client",
         privileges: "types.ChatPrivileges" = None,
