@@ -276,7 +276,7 @@ class Story(Object, Update):
         protect_content: bool = None,
         reply_markup=None
     ) -> "types.Message":
-        """Bound method *reply_text* of :obj:`~pyrogram_styled.types.Story`.
+        """Bound method *reply_text* of :obj:`~pyrogram.types.Story`.
 
         An alias exists as *reply*.
 
