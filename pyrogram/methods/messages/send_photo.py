@@ -233,5 +233,5 @@ class SendPhoto:
                                 {i.id: i for i in r.chats},
                                 is_scheduled=isinstance(i, raw.types.UpdateNewScheduledMessage)
                             )
-        except pyrogram_styled.StopTransmission:
+        except pyrogram.StopTransmission:
             return None
