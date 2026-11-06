@@ -48,7 +48,7 @@ class GetPinnedStories:
                 By default, all events will be returned.
 
         Yields:
-            :obj:`~pyrogram_styled.types.Story` objects.
+            :obj:`~pyrogram.types.Story` objects.
 
         Example:
             .. code-block:: python
