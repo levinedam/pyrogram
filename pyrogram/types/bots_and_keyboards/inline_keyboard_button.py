@@ -18,8 +18,8 @@
 
 from typing import Optional, Union
 
-import pyrogram_styled
-from pyrogram_styled import enums, raw, types
+import pyrogram
+from pyrogram import enums, raw, types
 from ..object import Object
 
 
@@ -35,7 +35,7 @@ class InlineKeyboardButton(Object):
         icon_custom_emoji_id (``str``, *optional*):
             Unique identifier of the custom emoji shown before the text of the button. Can only be used by bots that purchased additional usernames on Fragment or in the messages directly sent by the bot to private, group and supergroup chats if the owner of the bot has a Telegram Premium subscription..
 
-        style (:obj:`~pyrogram_styled.enums.ButtonStyle`, *optional*):
+        style (:obj:`~pyrogram.enums.ButtonStyle`, *optional*):
             Style of the button.
             If omitted, then an app-specific style is used.
 
@@ -48,13 +48,13 @@ class InlineKeyboardButton(Object):
         callback_data (``str`` | ``bytes``, *optional*):
             Data to be sent in a callback query to the bot when button is pressed, 1-64 bytes.
 
-        web_app (:obj:`~pyrogram_styled.types.WebAppInfo`, *optional*):
+        web_app (:obj:`~pyrogram.types.WebAppInfo`, *optional*):
             Description of the `Web App <https://core.telegram.org/bots/webapps>`_ that will be launched when the user
             presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the
             method :meth:`~pyrogram_styled.Client.answer_web_app_query`. Available only in private chats between a user and the
             bot.
 
-        login_url (:obj:`~pyrogram_styled.types.LoginUrl`, *optional*):
+        login_url (:obj:`~pyrogram.types.LoginUrl`, *optional*):
              An HTTP URL used to automatically authorize the user. Can be used as a replacement for
              the `Telegram Login Widget <https://core.telegram.org/widgets/login>`_.
 
@@ -75,10 +75,10 @@ class InlineKeyboardButton(Object):
         switch_inline_query_chosen_chat (:obj:`~pyrogram_styled.types.SwitchInlineQueryChosenChat`, *optional*):
             If set, pressing the button will prompt the user to select one of their chats of the specified type, open that chat and insert the bot's username and the specified inline query in the input field
 
-        copy_text (:obj:`~pyrogram_styled.types.CopyTextButton`, *optional*):
+        copy_text (:obj:`~pyrogram.types.CopyTextButton`, *optional*):
             Description of the button that copies the specified text to the clipboard.
 
-        callback_game (:obj:`~pyrogram_styled.types.CallbackGame`, *optional*):
+        callback_game (:obj:`~pyrogram.types.CallbackGame`, *optional*):
             Description of the game that will be launched when the user presses the button.
 
             .. note::
@@ -263,7 +263,7 @@ class InlineKeyboardButton(Object):
                 icon_custom_emoji_id=icon_custom_emoji_id
             )
 
-    async def write(self, client: "pyrogram_styled.Client"):
+    async def write(self, client: "pyrogram.Client"):
         raw_style = raw.types.KeyboardButtonStyle(
             bg_primary=self.style == enums.ButtonStyle.PRIMARY,
             bg_danger=self.style == enums.ButtonStyle.DANGER,
