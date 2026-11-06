@@ -50,7 +50,7 @@ class RequestCallbackAnswer:
 
             password (``str``, *optional*):
                 When clicking certain buttons (such as BotFather's confirmation button to transfer ownership), if your account has 2FA enabled, you need to provide your account's password. 
-                The 2-step verification password for the current user. Only applicable, if the :obj:`~pyrogram_styled.types.InlineKeyboardButton` contains ``callback_data_with_password``.
+                The 2-step verification password for the current user. Only applicable, if the :obj:`~pyrogram.types.InlineKeyboardButton` contains ``callback_data_with_password``.
 
             timeout (``int``, *optional*):
                 Timeout in seconds.
