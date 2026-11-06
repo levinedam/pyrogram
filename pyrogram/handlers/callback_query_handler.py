@@ -92,7 +92,7 @@ class CallbackQueryHandler(Handler):
         )
 
     async def check_if_has_matching_listener(
-        self, client: pyrogram_styled.Client, query: CallbackQuery
+        self, client: pyrogram.Client, query: CallbackQuery
     ) -> tuple[bool, Listener | None]:
         """
         Checks if the CallbackQuery object has a matching listener.
