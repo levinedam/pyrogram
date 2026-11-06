@@ -18,7 +18,7 @@
 
 from enum import auto
 
-from pyrogram_styled import raw
+from pyrogram import raw
 
 from .auto_name import AutoName
 
