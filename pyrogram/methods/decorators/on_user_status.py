@@ -49,7 +49,7 @@ class OnUserStatus:
 
                 func.handlers.append(
                     (
-                        pyrogram_styled.handlers.UserStatusHandler(func, self),
+                        pyrogram.handlers.UserStatusHandler(func, self),
                         group if filters is None else filters
                     )
                 )
