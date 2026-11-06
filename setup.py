@@ -27,7 +27,7 @@ from compiler.errors import compiler as errors_compiler
 with open("requirements.txt", encoding="utf-8") as r:
     requires = [i.strip() for i in r]
 
-with open("pyrogram_/__init__.py", encoding="utf-8") as f:
+with open("pyrogram/__init__.py", encoding="utf-8") as f:
     version = re.findall(r"__version__ = \"(.+)\"", f.read())[0]
 
 with open("README.md", encoding="utf-8") as f:
